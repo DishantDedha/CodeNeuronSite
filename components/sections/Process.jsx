@@ -45,8 +45,8 @@ export default function Process() {
   const inView = useInView(headingRef, { once: true, margin: '-60px 0px' })
 
   return (
-    <section className="py-28 lg:py-36 bg-[#FAFAF9] dark:bg-[#0A0A0A]">
-      <div className="max-w-[1320px] mx-auto px-6 lg:px-12">
+    <section className="py-16 sm:py-24 lg:py-36 bg-[#FAFAF9] dark:bg-[#0A0A0A]">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           ref={headingRef}
           initial={{ opacity: 0, y: 16 }}
@@ -54,7 +54,7 @@ export default function Process() {
           transition={{ duration: 0.6, ease: [0.21, 0.45, 0.27, 0.9] }}
           className="mb-2"
         >
-          <h2 className="text-4xl lg:text-[52px] font-semibold text-[#0F172A] dark:text-[#F8FAFC] tracking-[-0.03em] leading-tight">
+          <h2 className="text-[2rem] sm:text-4xl lg:text-[52px] font-semibold text-[#0F172A] dark:text-[#F8FAFC] tracking-[-0.03em] leading-tight">
             {process.heading}
           </h2>
         </motion.div>

@@ -9,17 +9,17 @@ export default function Manifesto() {
   const inView = useInView(ref, { once: true, margin: '-80px 0px' })
 
   return (
-    <section className="py-28 lg:py-36 bg-[#0F172A] dark:bg-[#030303] overflow-hidden relative">
+    <section className="py-16 sm:py-24 lg:py-36 bg-[#0F172A] dark:bg-[#030303] overflow-hidden relative">
       {/* Subtle radial glow */}
       <div
-        className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+        className="absolute top-1/2 left-0 sm:left-1/4 -translate-y-1/2 w-[80vw] max-w-[600px] aspect-square rounded-full pointer-events-none"
         style={{
           background: 'radial-gradient(circle, rgba(79,70,229,0.07) 0%, transparent 70%)',
         }}
         aria-hidden="true"
       />
 
-      <div className="relative z-10 max-w-[1320px] mx-auto px-6 lg:px-12">
+      <div className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 32 }}
@@ -28,8 +28,8 @@ export default function Manifesto() {
         >
           <blockquote>
             <p
-              className="font-semibold text-[#F8FAFC] leading-[1.1] tracking-[-0.03em] whitespace-pre-line max-w-[780px]"
-              style={{ fontSize: 'clamp(32px, 4.5vw, 62px)' }}
+              className="font-semibold text-[#F8FAFC] leading-[1.15] sm:leading-[1.1] tracking-[-0.03em] whitespace-pre-line max-w-[780px]"
+              style={{ fontSize: 'clamp(1.75rem, 5vw, 3.875rem)' }}
             >
               {manifesto.statement}
             </p>

@@ -143,7 +143,7 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="group inline-flex items-center justify-center gap-2 bg-[#4F46E5] hover:bg-[#4338CA] text-white px-6 py-3 rounded-md text-sm font-medium transition-colors self-start"
+        className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#4F46E5] hover:bg-[#4338CA] text-white px-6 py-3 rounded-md text-sm font-medium transition-colors self-stretch sm:self-start"
       >
         Send it
         <ArrowRight

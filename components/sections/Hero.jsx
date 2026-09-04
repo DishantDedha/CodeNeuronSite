@@ -23,7 +23,7 @@ function PrimaryCTA({ label, href }) {
       ref={ref}
       href={href}
       onMouseMove={handleMouseMove}
-      className="group relative overflow-hidden inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-medium text-white transition-all duration-200"
+      className="group relative overflow-hidden inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-md text-sm font-medium text-white transition-all duration-200"
       style={{
         background: `radial-gradient(circle at ${pos.x}px ${pos.y}px, #6366F1 0%, #4F46E5 55%)`,
       }}
@@ -51,25 +51,25 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 max-w-[1320px] mx-auto px-6 lg:px-12 w-full py-20 lg:py-0">
+      <div className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-12 w-full py-16 sm:py-20 lg:py-0">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — text */}
           <motion.div
             variants={stagger}
             initial="hidden"
             animate="visible"
-            className="flex flex-col items-start"
+            className="flex flex-col items-start w-full min-w-0"
           >
             <motion.p
               variants={fadeUp}
-              className="text-xs font-mono uppercase tracking-widest text-[#4F46E5] mb-6"
+              className="text-xs font-mono uppercase tracking-widest text-[#4F46E5] mb-5 sm:mb-6"
             >
               {hero.eyebrow}
             </motion.p>
 
             <motion.h1
               variants={fadeUp}
-              className="text-[clamp(52px,7vw,100px)] font-semibold leading-[1.02] tracking-[-0.04em] text-[#0F172A] dark:text-[#F8FAFC] mb-7"
+              className="text-[clamp(2.25rem,8vw,6.25rem)] font-semibold leading-[1.05] sm:leading-[1.02] tracking-[-0.04em] text-[#0F172A] dark:text-[#F8FAFC] mb-6 sm:mb-7"
             >
               {hero.headline.map((line, i) => (
                 <span key={i} className="block">
@@ -80,16 +80,16 @@ export default function Hero() {
 
             <motion.p
               variants={fadeUp}
-              className="text-base lg:text-[17px] text-[#475569] dark:text-[#94A3B8] leading-[1.7] mb-10 max-w-[400px]"
+              className="text-base lg:text-[17px] text-[#475569] dark:text-[#94A3B8] leading-[1.7] mb-8 sm:mb-10 max-w-[400px]"
             >
               {hero.sub}
             </motion.p>
 
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3">
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
               <PrimaryCTA label={hero.primaryCTA.label} href={hero.primaryCTA.href} />
               <Link
                 href={hero.secondaryCTA.href}
-                className="inline-flex items-center justify-center px-6 py-3 rounded-md text-sm font-medium text-[#0F172A] dark:text-[#F8FAFC] border border-[#E5E7EB] dark:border-[#1F2937] hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+                className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-md text-sm font-medium text-[#0F172A] dark:text-[#F8FAFC] border border-[#E5E7EB] dark:border-[#1F2937] hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
               >
                 {hero.secondaryCTA.label}
               </Link>
@@ -98,18 +98,20 @@ export default function Hero() {
             {/* Subtle stat row */}
             <motion.div
               variants={fadeUp}
-              className="flex items-center gap-8 mt-14 pt-10 border-t border-[#E5E7EB] dark:border-[#1F2937] w-full"
+              className="grid grid-cols-3 gap-3 sm:gap-6 md:gap-8 mt-10 sm:mt-14 pt-8 sm:pt-10 border-t border-[#E5E7EB] dark:border-[#1F2937] w-full"
             >
               {[
                 { value: '40+', label: 'Products shipped' },
-                { value: '11wk', label: 'Average 0→1 time' },
-                { value: '100%', label: 'Senior-level team' },
+                { value: '11wk', label: 'Avg 0→1 time' },
+                { value: '100%', label: 'Senior team' },
               ].map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-xl font-semibold text-[#0F172A] dark:text-[#F8FAFC] tracking-[-0.02em]">
+                <div key={stat.label} className="min-w-0">
+                  <div className="text-lg sm:text-xl font-semibold text-[#0F172A] dark:text-[#F8FAFC] tracking-[-0.02em]">
                     {stat.value}
                   </div>
-                  <div className="text-xs text-[#94A3B8] mt-0.5">{stat.label}</div>
+                  <div className="text-[11px] sm:text-xs text-[#94A3B8] mt-0.5 leading-snug">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </motion.div>

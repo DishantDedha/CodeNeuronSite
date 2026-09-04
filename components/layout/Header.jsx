@@ -44,14 +44,15 @@ export default function Header() {
             : 'bg-transparent'
         )}
       >
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 h-[68px] flex items-center justify-between gap-8">
+        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-12 h-[68px] flex items-center justify-between gap-4 md:gap-6 lg:gap-8">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0" aria-label="Codeneuron home">
-            <Logo width={148} height={37} />
+            <Logo width={132} height={33} className="sm:hidden" />
+            <Logo width={148} height={37} className="hidden sm:block" />
           </Link>
 
           {/* Nav — desktop */}
-          <nav className="hidden md:flex items-center gap-7" aria-label="Main navigation">
+          <nav className="hidden md:flex items-center gap-5 lg:gap-7" aria-label="Main navigation">
             {nav.links.map((link) => (
               <Link
                 key={link.href}
@@ -69,11 +70,11 @@ export default function Header() {
           </nav>
 
           {/* Right: toggle + CTA */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 sm:gap-2">
             <ThemeToggle />
             <Link
               href={nav.cta.href}
-              className="hidden md:inline-flex items-center text-sm font-medium bg-[#0F172A] dark:bg-[#F8FAFC] text-[#F8FAFC] dark:text-[#0F172A] px-4 py-2 rounded-md hover:opacity-80 transition-opacity ml-2"
+              className="hidden md:inline-flex items-center text-sm font-medium bg-[#0F172A] dark:bg-[#F8FAFC] text-[#F8FAFC] dark:text-[#0F172A] px-3 lg:px-4 py-2 rounded-md hover:opacity-80 transition-opacity ml-1 lg:ml-2"
             >
               {nav.cta.label}
             </Link>
@@ -81,12 +82,12 @@ export default function Header() {
             {/* Hamburger — mobile */}
             <button
               onClick={() => setMenuOpen(true)}
-              className="md:hidden p-2 text-[#475569] dark:text-[#94A3B8] hover:text-[#0F172A] dark:hover:text-[#F8FAFC] transition-colors"
+              className="md:hidden flex flex-col justify-center items-end gap-[5px] min-w-11 min-h-11 px-2 text-[#475569] dark:text-[#94A3B8] hover:text-[#0F172A] dark:hover:text-[#F8FAFC] transition-colors"
               aria-label="Open menu"
               aria-expanded={menuOpen}
             >
-              <span className="block w-5 h-px bg-current mb-[5px]" />
-              <span className="block w-5 h-px bg-current mb-[5px]" />
+              <span className="block w-5 h-px bg-current" />
+              <span className="block w-5 h-px bg-current" />
               <span className="block w-3.5 h-px bg-current" />
             </button>
           </div>
@@ -113,7 +114,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 280 }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-[280px] bg-[#FAFAF9] dark:bg-[#0D0D0D] border-l border-[#E5E7EB] dark:border-[#1F2937] flex flex-col"
+              className="fixed top-0 right-0 bottom-0 z-50 w-[min(280px,100vw)] bg-[#FAFAF9] dark:bg-[#0D0D0D] border-l border-[#E5E7EB] dark:border-[#1F2937] flex flex-col"
               role="dialog"
               aria-modal="true"
               aria-label="Navigation menu"

@@ -9,8 +9,8 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <div className="pt-[68px] min-h-screen bg-[#FAFAF9] dark:bg-[#0A0A0A]">
-      <div className="max-w-[1320px] mx-auto px-6 lg:px-12 py-20">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-12 py-14 sm:py-20">
+        <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24">
           {/* Left — info */}
           <div>
             <p className="text-xs font-mono uppercase tracking-widest text-[#4F46E5] mb-4">Contact</p>

@@ -23,12 +23,12 @@ function WorkCard({ item, index }) {
       >
         {/* Visual block */}
         <div
-          className="h-44 lg:h-auto lg:w-56 xl:w-64 shrink-0 flex items-center justify-center relative overflow-hidden"
+          className="h-36 sm:h-44 lg:h-auto lg:w-56 xl:w-64 shrink-0 flex items-center justify-center relative overflow-hidden"
           style={{ backgroundColor: item.accent }}
         >
           <span
-            className="font-semibold tracking-[-0.04em] select-none"
-            style={{ fontSize: 'clamp(48px, 5vw, 72px)', color: 'rgba(255,255,255,0.08)' }}
+            className="font-semibold tracking-[-0.04em] select-none text-center leading-[0.95] px-5"
+            style={{ fontSize: 'clamp(36px, 4vw, 56px)', color: 'rgba(255,255,255,0.08)' }}
           >
             {item.name}
           </span>
@@ -40,7 +40,7 @@ function WorkCard({ item, index }) {
         </div>
 
         {/* Content */}
-        <div className="flex-1 p-7 lg:p-8 flex flex-col justify-between">
+        <div className="flex-1 min-w-0 p-5 sm:p-7 lg:p-8 flex flex-col justify-between">
           <div>
             <div className="flex items-start justify-between gap-4 mb-3">
               <h3 className="text-xl lg:text-2xl font-medium text-[#0F172A] dark:text-[#F8FAFC] tracking-[-0.02em]">
@@ -79,17 +79,17 @@ export default function Work() {
   const inView = useInView(headingRef, { once: true, margin: '-60px 0px' })
 
   return (
-    <section className="py-28 lg:py-36 bg-[#F4F3F1] dark:bg-[#0D0D0D]">
-      <div className="max-w-[1320px] mx-auto px-6 lg:px-12">
+    <section className="py-20 sm:py-28 lg:py-36 bg-[#F4F3F1] dark:bg-[#0D0D0D]">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           ref={headingRef}
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.21, 0.45, 0.27, 0.9] }}
-          className="mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4"
+          className="mb-8 sm:mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4"
         >
           <div>
-            <h2 className="text-4xl lg:text-[52px] font-semibold text-[#0F172A] dark:text-[#F8FAFC] tracking-[-0.03em] leading-tight mb-2">
+            <h2 className="text-3xl sm:text-4xl lg:text-[52px] font-semibold text-[#0F172A] dark:text-[#F8FAFC] tracking-[-0.03em] leading-tight mb-2">
               {work.heading}
             </h2>
             <p className="text-sm text-[#94A3B8] dark:text-[#475569]">{work.sub}</p>

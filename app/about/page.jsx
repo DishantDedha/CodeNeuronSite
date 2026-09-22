@@ -1,29 +1,32 @@
 import Link from 'next/link'
 import { about } from '@/lib/content'
+import { pageMetadata } from '@/lib/site'
 
-export const metadata = {
-  title: 'About — Codeneuron',
-  description: 'Who we are and how we think about software.',
-}
+export const metadata = pageMetadata({
+  title: 'About',
+  description:
+    'Codeneuron is a small, senior software team. How we work, what we believe, and why we cap the number of clients we take on.',
+  path: '/about',
+})
 
 export default function AboutPage() {
   return (
     <div className="pt-[68px] min-h-screen bg-[#FAFAF9] dark:bg-[#0A0A0A]">
       {/* Header */}
-      <div className="max-w-[1320px] mx-auto px-6 lg:px-12 pt-20 pb-16">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-12 pt-12 sm:pt-20 pb-12 sm:pb-16">
         <p className="text-xs font-mono uppercase tracking-widest text-[#4F46E5] mb-4">About</p>
         <h1
           className="font-semibold text-[#0F172A] dark:text-[#F8FAFC] tracking-[-0.04em] leading-[1.04] whitespace-pre-line max-w-[680px]"
-          style={{ fontSize: 'clamp(40px, 5.5vw, 80px)' }}
+          style={{ fontSize: 'clamp(34px, 5.5vw, 80px)' }}
         >
           {about.heading}
         </h1>
-        <p className="mt-4 text-[#475569] dark:text-[#94A3B8] text-lg">{about.sub}</p>
+        <p className="mt-4 text-[#475569] dark:text-[#94A3B8] text-base sm:text-lg">{about.sub}</p>
       </div>
 
       {/* Story */}
       <div className="border-t border-[#E5E7EB] dark:border-[#1F2937]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 py-20 grid lg:grid-cols-[300px_1fr] gap-12 lg:gap-20">
+        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-12 py-14 sm:py-20 grid lg:grid-cols-[300px_1fr] gap-6 sm:gap-12 lg:gap-20">
           <div>
             <h2 className="text-sm font-mono uppercase tracking-widest text-[#94A3B8] dark:text-[#475569]">
               Our story
@@ -41,8 +44,8 @@ export default function AboutPage() {
 
       {/* Principles */}
       <div className="border-t border-[#E5E7EB] dark:border-[#1F2937] bg-[#F4F3F1] dark:bg-[#0D0D0D]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 py-20">
-          <h2 className="text-sm font-mono uppercase tracking-widest text-[#94A3B8] dark:text-[#475569] mb-14">
+        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-12 py-14 sm:py-20">
+          <h2 className="text-sm font-mono uppercase tracking-widest text-[#94A3B8] dark:text-[#475569] mb-10 sm:mb-14">
             What we believe
           </h2>
           <div className="grid sm:grid-cols-2 gap-x-16 gap-y-10">
@@ -60,13 +63,13 @@ export default function AboutPage() {
 
       {/* CTA */}
       <div className="border-t border-[#E5E7EB] dark:border-[#1F2937]">
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 py-16 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-16 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
           <p className="text-lg font-medium text-[#0F172A] dark:text-[#F8FAFC]">
             Sounds like a fit?
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-[#4F46E5] hover:bg-[#4338CA] text-white px-6 py-3 rounded-md text-sm font-medium transition-colors shrink-0"
+            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#4F46E5] hover:bg-[#4338CA] text-white px-6 py-3 rounded-md text-sm font-medium transition-colors shrink-0"
           >
             Start a conversation
           </Link>

@@ -44,7 +44,7 @@ export default function Header() {
             : 'bg-transparent'
         )}
       >
-        <div className="max-w-[1320px] mx-auto px-6 lg:px-12 h-[68px] flex items-center justify-between gap-8">
+        <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-12 h-[68px] flex items-center justify-between gap-4 sm:gap-8">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0" aria-label="Codeneuron home">
             <Logo width={148} height={37} />
@@ -81,13 +81,15 @@ export default function Header() {
             {/* Hamburger — mobile */}
             <button
               onClick={() => setMenuOpen(true)}
-              className="md:hidden p-2 text-[#475569] dark:text-[#94A3B8] hover:text-[#0F172A] dark:hover:text-[#F8FAFC] transition-colors"
+              className="md:hidden -mr-2 inline-flex items-center justify-center w-11 h-11 text-[#475569] dark:text-[#94A3B8] hover:text-[#0F172A] dark:hover:text-[#F8FAFC] transition-colors"
               aria-label="Open menu"
               aria-expanded={menuOpen}
             >
-              <span className="block w-5 h-px bg-current mb-[5px]" />
-              <span className="block w-5 h-px bg-current mb-[5px]" />
-              <span className="block w-3.5 h-px bg-current" />
+              <span className="block w-5" aria-hidden="true">
+                <span className="block w-5 h-px bg-current mb-[5px]" />
+                <span className="block w-5 h-px bg-current mb-[5px]" />
+                <span className="block w-3.5 h-px bg-current" />
+              </span>
             </button>
           </div>
         </div>
@@ -113,7 +115,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 280 }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-[280px] bg-[#FAFAF9] dark:bg-[#0D0D0D] border-l border-[#E5E7EB] dark:border-[#1F2937] flex flex-col"
+              className="fixed top-0 right-0 bottom-0 z-50 w-[min(280px,85vw)] bg-[#FAFAF9] dark:bg-[#0D0D0D] border-l border-[#E5E7EB] dark:border-[#1F2937] flex flex-col"
               role="dialog"
               aria-modal="true"
               aria-label="Navigation menu"
@@ -122,7 +124,7 @@ export default function Header() {
                 <Logo width={130} height={33} />
                 <button
                   onClick={() => setMenuOpen(false)}
-                  className="p-2 text-[#475569] dark:text-[#94A3B8] hover:text-[#0F172A] dark:hover:text-[#F8FAFC] transition-colors"
+                  className="-mr-2 inline-flex items-center justify-center w-11 h-11 text-[#475569] dark:text-[#94A3B8] hover:text-[#0F172A] dark:hover:text-[#F8FAFC] transition-colors"
                   aria-label="Close menu"
                 >
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

@@ -1,23 +1,24 @@
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { work, ctaStrip } from '@/lib/content'
+import { pageMetadata } from '@/lib/site'
 
 function WorkCard({ item }) {
   return (
     <article className="flex flex-col lg:flex-row border border-[#E5E7EB] dark:border-[#1F2937] rounded-xl overflow-hidden bg-white dark:bg-[#0D0D0D]">
       <div
-        className="h-48 lg:h-auto lg:w-72 shrink-0 flex items-center justify-center"
+        className="h-36 sm:h-48 lg:h-auto lg:w-72 shrink-0 flex items-center justify-center overflow-hidden"
         style={{ backgroundColor: item.accent }}
         aria-hidden="true"
       >
         <span
-          className="font-semibold tracking-[-0.04em] select-none"
-          style={{ fontSize: '72px', color: 'rgba(255,255,255,0.08)' }}
+          className="font-semibold tracking-[-0.04em] select-none text-center leading-[0.95] px-5"
+          style={{ fontSize: 'clamp(36px, 4vw, 56px)', color: 'rgba(255,255,255,0.08)' }}
         >
           {item.name}
         </span>
       </div>
-      <div className="flex-1 p-8 lg:p-10">
+      <div className="flex-1 min-w-0 p-5 sm:p-8 lg:p-10">
         <div className="flex flex-wrap gap-2 mb-5">
           {item.tags.map((tag) => (
             <span
@@ -28,7 +29,7 @@ function WorkCard({ item }) {
             </span>
           ))}
         </div>
-        <h2 className="text-2xl lg:text-3xl font-semibold text-[#0F172A] dark:text-[#F8FAFC] tracking-[-0.02em] mb-3">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-[#0F172A] dark:text-[#F8FAFC] tracking-[-0.02em] mb-3">
           {item.name}
         </h2>
         <p className="text-sm font-medium text-[#4F46E5] mb-3">{item.outcome}</p>
@@ -38,18 +39,20 @@ function WorkCard({ item }) {
   )
 }
 
-export const metadata = {
-  title: 'Work — Codeneuron',
-  description: 'Selected projects from the Codeneuron team.',
-}
+export const metadata = pageMetadata({
+  title: 'Work',
+  description:
+    'Projects Codeneuron has designed and built: Red Express, Majestic Press, Embifi and GMP. Web, mobile and backend platforms built end to end.',
+  path: '/work',
+})
 
 export default function WorkPage() {
   return (
     <div className="pt-[68px] min-h-screen bg-[#FAFAF9] dark:bg-[#0A0A0A]">
       {/* Header */}
-      <div className="max-w-[1320px] mx-auto px-6 lg:px-12 pt-20 pb-16 border-b border-[#E5E7EB] dark:border-[#1F2937]">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-12 pt-20 pb-16 border-b border-[#E5E7EB] dark:border-[#1F2937]">
         <p className="text-xs font-mono uppercase tracking-widest text-[#4F46E5] mb-4">Portfolio</p>
-        <h1 className="text-[clamp(40px,5vw,72px)] font-semibold text-[#0F172A] dark:text-[#F8FAFC] tracking-[-0.03em] leading-[1.05] max-w-[640px]">
+        <h1 className="text-[clamp(34px,5vw,72px)] font-semibold text-[#0F172A] dark:text-[#F8FAFC] tracking-[-0.03em] leading-[1.05] max-w-[640px]">
           Things we&apos;ve built.
         </h1>
         <p className="mt-4 text-[#475569] dark:text-[#94A3B8] max-w-[480px] leading-relaxed">
@@ -59,14 +62,14 @@ export default function WorkPage() {
       </div>
 
       {/* Cards */}
-      <div className="max-w-[1320px] mx-auto px-6 lg:px-12 py-16 flex flex-col gap-6">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-12 py-10 sm:py-16 flex flex-col gap-4 sm:gap-6">
         {work.items.map((item) => (
           <WorkCard key={item.name} item={item} />
         ))}
       </div>
 
       {/* CTA */}
-      <div className="max-w-[1320px] mx-auto px-6 lg:px-12 py-16 border-t border-[#E5E7EB] dark:border-[#1F2937]">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-16 border-t border-[#E5E7EB] dark:border-[#1F2937]">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
           <div>
             <p className="text-lg font-medium text-[#0F172A] dark:text-[#F8FAFC] mb-1">

@@ -1,22 +1,25 @@
 import { contact } from '@/lib/content'
 import ContactForm from './ContactForm'
+import { pageMetadata } from '@/lib/site'
 
-export const metadata = {
-  title: 'Contact — Codeneuron',
-  description: 'Start a conversation with the Codeneuron team.',
-}
+export const metadata = pageMetadata({
+  title: 'Contact',
+  description:
+    "Start a project with Codeneuron. Tell us what you're building and we'll reply within one business day.",
+  path: '/contact',
+})
 
 export default function ContactPage() {
   return (
     <div className="pt-[68px] min-h-screen bg-[#FAFAF9] dark:bg-[#0A0A0A]">
-      <div className="max-w-[1320px] mx-auto px-6 lg:px-12 py-20">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-20">
+        <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24">
           {/* Left — info */}
           <div>
             <p className="text-xs font-mono uppercase tracking-widest text-[#4F46E5] mb-4">Contact</p>
             <h1
               className="font-semibold text-[#0F172A] dark:text-[#F8FAFC] tracking-[-0.04em] leading-[1.04] mb-6"
-              style={{ fontSize: 'clamp(36px, 4.5vw, 64px)' }}
+              style={{ fontSize: 'clamp(32px, 4.5vw, 64px)' }}
             >
               {contact.heading}
             </h1>
@@ -31,7 +34,7 @@ export default function ContactPage() {
                 </p>
                 <a
                   href={`mailto:${contact.email}`}
-                  className="font-mono text-[#0F172A] dark:text-[#F8FAFC] hover:text-[#4F46E5] dark:hover:text-[#4F46E5] transition-colors"
+                  className="font-mono break-all text-[#0F172A] dark:text-[#F8FAFC] hover:text-[#4F46E5] dark:hover:text-[#4F46E5] transition-colors"
                 >
                   {contact.email}
                 </a>

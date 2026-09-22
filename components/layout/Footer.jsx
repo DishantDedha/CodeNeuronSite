@@ -39,8 +39,8 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-[#E5E7EB] dark:border-[#1F2937] bg-[#FAFAF9] dark:bg-[#0A0A0A]">
-      <div className="max-w-[1320px] mx-auto px-6 lg:px-12 pt-16 pb-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-12 pt-12 sm:pt-16 pb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 mb-12 sm:mb-16">
           {/* Brand column */}
           <div className="sm:col-span-2">
             <Link href="/" aria-label="Codeneuron home">
